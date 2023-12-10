@@ -31,7 +31,7 @@ class ViewPost: AppCompatActivity() {
         initIntent()
     }
     private fun initIntent() {
-        val position = intent.getIntExtra("position", -1)
+        position = intent.getIntExtra("position", -1)
         if (position != -1) {
             name = intent.getStringExtra("name").toString()
             address = intent.getStringExtra("address").toString()

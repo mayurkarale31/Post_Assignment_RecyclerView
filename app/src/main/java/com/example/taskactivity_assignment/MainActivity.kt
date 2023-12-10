@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
 
     inner class MyPostClickListener : CreatePostAdapter.OnPostClickListener{
         override fun onPostClick(position: Int, post: Post, view: View) {
-           // Toast.makeText(this@MainActivity,"Clicked", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this@MainActivity, ViewPost::class.java)
             intent.putExtra("position", position)
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_activity_menu, menu)
-        val addPost = menu?.findItem(R.id.addPost)
+        //val addPost = menu?.findItem(R.id.addPost)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -68,8 +67,8 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     @SuppressLint("NotifyDataSetChanged")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode == 1 && resultCode == 1) {
             name = data?.getStringExtra("name").toString()
             address = data?.getStringExtra("address").toString()
@@ -101,8 +100,6 @@ class MainActivity : AppCompatActivity() {
             if (position != -1) {
                 if (position != null) {
                     posts.removeAt(position)
-                }
-                if (position != null) {
                     createPostAdapter.notifyItemRemoved(position)
                 }
             }

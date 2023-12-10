@@ -74,12 +74,15 @@ class EditPost:AppCompatActivity() {
     private fun initListener(){
         image1.setOnClickListener {
             selectedImage = R.drawable.room1
+            image1.alpha = 0.5f
         }
         image2.setOnClickListener {
             selectedImage = R.drawable.room2
+            image2.alpha = 0.5f
         }
         image3.setOnClickListener {
             selectedImage = R.drawable.room3
+            image3.alpha = 0.5f
         }
     }
 
